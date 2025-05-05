@@ -45,7 +45,7 @@ export default function Projects() {
                             {/* Fotoğraf */}
                             <div className="w-full md:w-1/2">
                                 <Image
-                                    src="/screen/splashScreen.png"
+                                    src="/screen/splashScreen2.png"
                                     alt="NutriPocket Screenshot"
                                     width={300}
                                     height={400}
