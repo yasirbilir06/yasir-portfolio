@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yasirbilir.com
+
+# Sitemaps
+Sitemap: https://yasirbilir.com/sitemap.xml
