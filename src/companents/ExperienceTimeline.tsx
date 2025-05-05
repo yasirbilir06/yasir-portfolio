@@ -85,9 +85,9 @@ export default function ExperienceTimeline() {
     const sectionTitle = locale === "en" ? "My Experiences" : "Deneyimlerim";
 
     return (
-        <section className="bg-cyan-400 py-16 px-6">
-            <h2 className="text-2xl font-bold text-center mb-8">{sectionTitle}</h2>
-            <div className="flex space-x-6 overflow-x-auto scrollbar-thin scrollbar-thumb-cyan-400">
+        <section className="bg-cyan-400 py-16 px-4 sm:px-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-8">{sectionTitle}</h2>
+            <div className="flex space-x-4 sm:space-x-6 overflow-x-auto scrollbar-thin scrollbar-thumb-cyan-600 pb-2">
                 {t.map((exp, i) => (
                     <ExperienceCard key={i} {...exp} />
                 ))}

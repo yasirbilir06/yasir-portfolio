@@ -28,11 +28,11 @@ export default function NutritionPocketPage() {
                     </p>
                 </section>
 
-                {/* 1. Rol Bazlı Giriş */}
+                {/* Rol Bazlı Giriş */}
                 <FadeInSection>
                     <section className="flex flex-col md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
-                            <Image src="/screen/profil.jpeg" alt="Role Selection Screen" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/profil.jpeg" alt="Role Selection Screen" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                         <div className="md:w-1/2">
                             <h2 className="text-2xl font-semibold text-cyan-600 mb-4">
@@ -47,7 +47,7 @@ export default function NutritionPocketPage() {
                     </section>
                 </FadeInSection>
 
-                {/* 2. Kilo Takibi ve Veri Grafiği */}
+                {/* Kilo Takibi */}
                 <FadeInSection>
                     <section className="flex flex-col-reverse md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
@@ -61,16 +61,16 @@ export default function NutritionPocketPage() {
                             </p>
                         </div>
                         <div className="md:w-1/2">
-                            <Image src="/screen/kilotakip.jpeg" alt="Weight Tracking Chart" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/kilotakip.jpeg" alt="Weight Tracking Chart" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                     </section>
                 </FadeInSection>
 
-                {/* 3. Gerçek Zamanlı Chat */}
+                {/* Chat */}
                 <FadeInSection>
                     <section className="flex flex-col md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
-                            <Image src="/screen/chat.png" alt="Chat Feature" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/chat.png" alt="Chat Feature" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                         <div className="md:w-1/2">
                             <h2 className="text-2xl font-semibold text-cyan-600 mb-4">
@@ -85,7 +85,7 @@ export default function NutritionPocketPage() {
                     </section>
                 </FadeInSection>
 
-                {/* PDF Yükleme ve Takvim */}
+                {/* PDF ve Takvim */}
                 <FadeInSection>
                     <section className="flex flex-col-reverse md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
@@ -99,16 +99,16 @@ export default function NutritionPocketPage() {
                             </p>
                         </div>
                         <div className="md:w-1/2">
-                            <Image src="/screen/takip.jpeg" alt="Calendar Appointment Screen" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/takip.jpeg" alt="Calendar Appointment Screen" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                     </section>
                 </FadeInSection>
 
-                {/* BMH ve Makro Hesaplayıcı */}
+                {/* Hesaplayıcı */}
                 <FadeInSection>
                     <section className="flex flex-col md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
-                            <Image src="/screen/hesaplama.jpeg" alt="Nutrition Calculator Screen" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/hesaplama.jpeg" alt="Nutrition Calculator Screen" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                         <div className="md:w-1/2">
                             <h2 className="text-2xl font-semibold text-cyan-600 mb-4">
@@ -123,7 +123,7 @@ export default function NutritionPocketPage() {
                     </section>
                 </FadeInSection>
 
-                {/* Diyetisyen Klinik Harita */}
+                {/* Klinik Harita */}
                 <FadeInSection>
                     <section className="flex flex-col-reverse md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
@@ -137,7 +137,7 @@ export default function NutritionPocketPage() {
                             </p>
                         </div>
                         <div className="md:w-1/2">
-                            <Image src="/screen/konum.png" alt="Dietitian Map Section" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/konum.png" alt="Dietitian Map Section" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                     </section>
                 </FadeInSection>
@@ -146,7 +146,7 @@ export default function NutritionPocketPage() {
                 <FadeInSection>
                     <section className="flex flex-col md:flex-row items-center gap-10 px-6 py-16 max-w-6xl mx-auto">
                         <div className="md:w-1/2">
-                            <Image src="/screen/randevu.png" alt="Appointment System" width={300} height={300} className="rounded-xl shadow-xl" />
+                            <Image src="/screen/randevu.png" alt="Appointment System" width={300} height={300} className="rounded-xl shadow-xl w-full object-contain" />
                         </div>
                         <div className="md:w-1/2">
                             <h2 className="text-2xl font-semibold text-cyan-600 mb-4">
