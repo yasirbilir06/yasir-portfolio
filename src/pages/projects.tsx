@@ -4,117 +4,325 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
+type LocaleKey = "tr" | "en" | "de";
+
+const translations = {
+    tr: {
+        pageTitle: "Projeler | Yasir Bilir",
+        metaDesc: "Muhammed Yasir Bilir tarafından geliştirilen projeleri keşfedin...",
+        title: "Projelerim",
+        subtitle: "Geliştirdiğim mobil uygulamalar ve yazılım projeleri",
+        
+        featured: "Öne Çıkan",
+        allProjects: "Tüm Projeler",
+        
+        nutriPocketTitle: "NutriPocket",
+        nutriPocketSubtitle: "Diyetisyen Takip Uygulaması",
+        nutriPocketDesc: "Diyetisyenler ve danışanları tek platformda buluşturan, kapsamlı bir mobil sağlık uygulaması. Kullanıcı arayüzünden veri yönetimine kadar tüm sistemler sıfırdan geliştirildi.",
+        nutriPocketFeatures: [
+            "React Native ile çapraz platform",
+            "Firebase Authentication & Firestore",
+            "Gerçek zamanlı bildirimler",
+            "Material Design UI/UX",
+        ],
+        
+        yolovTitle: "Araç Sınıflandırma",
+        yolovSubtitle: "YOLOv5 Deep Learning Projesi",
+        yolovDesc: "Gerçek zamanlı görüntü işleme ile araç tiplerini yüksek doğrulukla tespit eden yapay zeka projesi.",
+        yolovFeatures: [
+            "Python & OpenCV",
+            "YOLOv5 modeli",
+            "Flask REST API",
+            "Docker & AWS EC2",
+        ],
+        
+        viewDetails: "Detayları Gör",
+        techStack: "Teknolojiler",
+    },
+    en: {
+        pageTitle: "Projects | Yasir Bilir",
+        metaDesc: "Explore projects developed by Muhammed Yasir Bilir...",
+        title: "My Projects",
+        subtitle: "Mobile applications and software projects I've developed",
+        
+        featured: "Featured",
+        allProjects: "All Projects",
+        
+        nutriPocketTitle: "NutriPocket",
+        nutriPocketSubtitle: "Dietitian Tracking App",
+        nutriPocketDesc: "A comprehensive mobile health application that brings dietitians and clients together on one platform. All systems from UI to data management were built from scratch.",
+        nutriPocketFeatures: [
+            "Cross-platform with React Native",
+            "Firebase Authentication & Firestore",
+            "Real-time notifications",
+            "Material Design UI/UX",
+        ],
+        
+        yolovTitle: "Vehicle Classification",
+        yolovSubtitle: "YOLOv5 Deep Learning Project",
+        yolovDesc: "An AI project that detects vehicle types with high accuracy using real-time image processing.",
+        yolovFeatures: [
+            "Python & OpenCV",
+            "YOLOv5 model",
+            "Flask REST API",
+            "Docker & AWS EC2",
+        ],
+        
+        viewDetails: "View Details",
+        techStack: "Technologies",
+    },
+    de: {
+        pageTitle: "Projekte | Yasir Bilir",
+        metaDesc: "Entdecken Sie die von Muhammed Yasir Bilir entwickelten Projekte...",
+        title: "Meine Projekte",
+        subtitle: "Mobile Anwendungen und Softwareprojekte, die ich entwickelt habe",
+        
+        featured: "Hervorgehoben",
+        allProjects: "Alle Projekte",
+        
+        nutriPocketTitle: "NutriPocket",
+        nutriPocketSubtitle: "Ernährungsberater-Tracking-App",
+        nutriPocketDesc: "Eine umfassende mobile Gesundheitsanwendung, die Ernährungsberater und Klienten auf einer Plattform zusammenbringt. Alle Systeme von UI bis Datenverwaltung wurden von Grund auf entwickelt.",
+        nutriPocketFeatures: [
+            "Plattformübergreifend mit React Native",
+            "Firebase Authentication & Firestore",
+            "Echtzeit-Benachrichtigungen",
+            "Material Design UI/UX",
+        ],
+        
+        yolovTitle: "Fahrzeugklassifizierung",
+        yolovSubtitle: "YOLOv5 Deep Learning Projekt",
+        yolovDesc: "Ein KI-Projekt, das Fahrzeugtypen mit hoher Genauigkeit durch Echtzeit-Bildverarbeitung erkennt.",
+        yolovFeatures: [
+            "Python & OpenCV",
+            "YOLOv5 Modell",
+            "Flask REST API",
+            "Docker & AWS EC2",
+        ],
+        
+        viewDetails: "Details ansehen",
+        techStack: "Technologien",
+    },
+};
+
 export default function Projects() {
     const { locale } = useRouter();
-    const isEnglish = locale === "en";
+    const currentLocale = (locale || "tr") as LocaleKey;
+    const t = translations[currentLocale] || translations.tr;
 
     return (
         <>
-            {/* SEO */}
             <Head>
-                <title>{isEnglish ? "Projects | Yasir Bilir" : "Projeler | Yasir Bilir"}</title>
-                <meta
-                    name="description"
-                    content={
-                        isEnglish
-                            ? "Explore projects developed by Muhammed Yasir Bilir..."
-                            : "Muhammed Yasir Bilir tarafından geliştirilen projeleri keşfedin..."
-                    }
-                />
-                <meta property="og:title" content={isEnglish ? "Projects | Yasir Bilir" : "Projeler | Yasir Bilir"} />
-                <meta property="og:description" content={
-                    isEnglish
-                        ? "Explore projects developed by Muhammed Yasir Bilir..."
-                        : "Muhammed Yasir Bilir tarafından geliştirilen projeleri keşfedin..."
-                } />
+                <title>{t.pageTitle}</title>
+                <meta name="description" content={t.metaDesc} />
+                <meta property="og:title" content={t.pageTitle} />
+                <meta property="og:description" content={t.metaDesc} />
                 <meta property="og:type" content="website" />
             </Head>
 
-            <main className="bg-white py-20 px-4 sm:px-6 min-h-screen">
-                <div className="max-w-6xl mx-auto space-y-20">
+            <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+                {/* Hero Header */}
+                <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 text-white py-20 sm:py-28">
+                    {/* Background Elements */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl" />
+                        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl" />
+                    </div>
+                    
+                    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
+                        <FadeInSection>
+                            <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 px-4 py-2 rounded-full text-sm mb-6">
+                                <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+                                {t.allProjects}
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{t.title}</h1>
+                            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">{t.subtitle}</p>
+                        </FadeInSection>
+                    </div>
+                </section>
 
-                    {/* NutriPocket */}
-                    <FadeInSection>
-                        <div className="flex flex-col md:flex-row items-center gap-8">
-                            {/* Görsel */}
-                            <div className="w-full md:w-1/2">
-                                <Image
-                                    src="/screen/splashScreen2.png"
-                                    alt="NutriPocket Screenshot"
-                                    width={300}
-                                    height={300}
-                                    className="rounded-lg shadow-lg object-contain w-full max-w-[300px] mx-auto"
-                                />
+                {/* Projects Section */}
+                <section className="py-16 sm:py-24 px-4 sm:px-6">
+                    <div className="max-w-6xl mx-auto space-y-16">
+                        
+                        {/* NutriPocket - Featured Project */}
+                        <FadeInSection>
+                            <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                                {/* Featured Badge */}
+                                <div className="absolute top-6 left-6 z-10">
+                                    <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
+                                        ⭐ {t.featured}
+                                    </span>
+                                </div>
+                                
+                                <div className="flex flex-col lg:flex-row">
+                                    {/* Image Section */}
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-cyan-500 to-blue-600 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="relative">
+                                            {/* Phone Frame */}
+                                            <div className="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl">
+                                                <div className="bg-slate-800 rounded-[2.5rem] overflow-hidden">
+                                                    <Image
+                                                        src="/screen/splashScreen2.png"
+                                                        alt="NutriPocket Screenshot"
+                                                        width={280}
+                                                        height={560}
+                                                        className="w-full h-auto"
+                                                    />
+                                                </div>
+                                                {/* Notch */}
+                                                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-full" />
+                                            </div>
+                                            
+                                            {/* Floating Tech Badge - Hidden on mobile */}
+                                            <div className="hidden sm:flex absolute -right-4 top-1/4 bg-white text-cyan-600 px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium animate-float items-center gap-2">
+                                                <div className="w-5 h-5 flex items-center justify-center">
+                                                    <Image src="/reactnative.svg" alt="React Native" width={20} height={20} className="object-contain" />
+                                                </div>
+                                                React Native
+                                            </div>
+                                            <div className="hidden sm:flex absolute -left-4 bottom-1/4 bg-white text-orange-500 px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium animate-float-delayed items-center gap-2">
+                                                🔥 Firebase
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Content Section */}
+                                    <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+                                        <div className="mb-2">
+                                            <span className="text-cyan-600 text-sm font-medium uppercase tracking-wider">Mobile App</span>
+                                        </div>
+                                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                                            {t.nutriPocketTitle}
+                                        </h2>
+                                        <p className="text-lg text-cyan-600 font-medium mb-4">
+                                            {t.nutriPocketSubtitle}
+                                        </p>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {t.nutriPocketDesc}
+                                        </p>
+                                        
+                                        {/* Tech Stack */}
+                                        <div className="mb-8">
+                                            <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {t.nutriPocketFeatures.map((feature, index) => (
+                                                    <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm">
+                                                        {feature}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        
+                                        <Link href="/projects/nutripocket">
+                                            <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all shadow-lg hover:shadow-xl">
+                                                {t.viewDetails}
+                                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeInSection>
 
+                        {/* YOLOv Project */}
+                        <FadeInSection>
+                            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                                <div className="flex flex-col lg:flex-row-reverse">
+                                    {/* Image Section */}
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-purple-500 to-indigo-600 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="relative w-full max-w-md">
+                                            <div className="bg-slate-900 rounded-2xl p-4 shadow-2xl">
+                                                <div className="flex items-center gap-2 mb-4">
+                                                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                                                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                                                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                                                    <span className="text-slate-400 text-xs ml-2">vehicle_detection.py</span>
+                                                </div>
+                                                <Image
+                                                    src="/yolov.jpeg"
+                                                    alt="YOLOv Vehicle Classification"
+                                                    width={400}
+                                                    height={300}
+                                                    className="w-full h-auto rounded-lg"
+                                                />
+                                            </div>
+                                            
+                                            {/* Floating Elements - Hidden on mobile */}
+                                            <div className="hidden sm:block absolute -right-4 top-8 bg-white text-purple-600 px-3 py-2 rounded-xl shadow-lg text-sm font-medium animate-float">
+                                                🐍 Python
+                                            </div>
+                                            <div className="hidden sm:block absolute -left-4 bottom-8 bg-white text-indigo-600 px-3 py-2 rounded-xl shadow-lg text-sm font-medium animate-float-delayed">
+                                                🤖 YOLOv5
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Content Section */}
+                                    <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+                                        <div className="mb-2">
+                                            <span className="text-purple-600 text-sm font-medium uppercase tracking-wider">AI / Deep Learning</span>
+                                        </div>
+                                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                                            {t.yolovTitle}
+                                        </h2>
+                                        <p className="text-lg text-purple-600 font-medium mb-4">
+                                            {t.yolovSubtitle}
+                                        </p>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {t.yolovDesc}
+                                        </p>
+                                        
+                                        {/* Tech Stack */}
+                                        <div>
+                                            <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {t.yolovFeatures.map((feature, index) => (
+                                                    <span key={index} className="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-lg text-sm border border-purple-100">
+                                                        {feature}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            {/* Açıklama */}
-                            <div className="w-full md:w-1/2">
-                                <h2 className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-4">
-                                    {isEnglish
-                                        ? "NutriPocket – Dietitian Application"
-                                        : "NutriPocket – Diyetisyen Uygulaması"}
-                                </h2>
-                                <p className="text-sm sm:text-base text-gray-700 mb-4">
-                                    {isEnglish
-                                        ? "NutriPocket is a mobile application I developed for dietitians and clients..."
-                                        : "NutriPocket, diyetisyenler ve danışanlar için geliştirdiğim mobil uygulama..."}
-                                </p>
-                                <ul className="list-disc list-inside text-sm sm:text-base text-gray-700 mb-4 space-y-2">
-                                    <li>{isEnglish ? "Cross-platform development with React Native" : "React Native ile çapraz platform mobil geliştirme"}</li>
-                                    <li>{isEnglish ? "Firebase Authentication and Firestore data management" : "Firebase Authentication ve Firestore tabanlı veri yönetimi"}</li>
-                                    <li>{isEnglish ? "Real-time notifications and offline support" : "Gerçek zamanlı bildirimler ve offline destek"}</li>
-                                    <li>{isEnglish ? "Elegant UI/UX design following Material Design" : "Material Design uyumlu şık UI/UX"}</li>
-                                </ul>
-                                <Link href="/projects/nutripocket">
-                                    <button className="bg-blue-600 text-white text-sm sm:text-base px-4 sm:px-6 py-2 rounded-full hover:bg-blue-700 transition">
-                                        {isEnglish ? "View Details" : "Detayları Gör"}
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </FadeInSection>
+                        </FadeInSection>
+                    </div>
+                </section>
 
-                    {/* YOLOv Araç Sınıflandırma */}
-                    <FadeInSection>
-                        <div className="flex flex-col md:flex-row items-center gap-8">
-                            {/* Açıklama */}
-                            <div className="w-full md:w-1/2 md:order-2">
-                                <h2 className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-4">
-                                    {isEnglish
-                                        ? "Vehicle Classification – YOLOv Project"
-                                        : "Araç Sınıflandırma – YOLOv Projesi"}
-                                </h2>
-                                <p className="text-sm sm:text-base text-gray-700 mb-4">
-                                    {isEnglish
-                                        ? "This project captures real-time images and classifies vehicle types using YOLOv..."
-                                        : "Bu proje, gerçek zamanlı görüntü alıp araç tiplerini YOLOv ile sınıflandırır..."}
-                                </p>
-                                <ul className="list-disc list-inside text-sm sm:text-base text-gray-700 mb-4 space-y-2">
-                                    <li>{isEnglish ? "Image processing with Python & OpenCV" : "Python & OpenCV ile görüntü işleme"}</li>
-                                    <li>{isEnglish ? "High-accuracy detection with YOLOv5 model" : "YOLOv5 modeli ile yüksek doğruluklu tespit"}</li>
-                                    <li>{isEnglish ? "Flask-based API and real-time WebSocket streaming" : "Flask tabanlı API ve gerçek zamanlı WebSocket akışı"}</li>
-                                    <li>{isEnglish ? "Deployment with Docker and AWS EC2 integration" : "Deploy için Docker ve AWS EC2 entegrasyonu"}</li>
-                                </ul>
-                                <Link href="/projects/yolov-vehicle">
-                                    <button className="bg-blue-600 text-white text-sm sm:text-base px-4 sm:px-6 py-2 rounded-full hover:bg-blue-700 transition">
-                                        {isEnglish ? "View Details" : "Detayları Gör"}
-                                    </button>
-                                </Link>
+                {/* CTA Section */}
+                <section className="py-16 px-4 sm:px-6">
+                    <div className="max-w-4xl mx-auto">
+                        <FadeInSection>
+                            <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+                                <div className="absolute inset-0 overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+                                </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+                                        {currentLocale === "de" ? "Haben Sie ein Projekt?" : currentLocale === "en" ? "Have a project in mind?" : "Bir projeniz mi var?"}
+                                    </h3>
+                                    <p className="text-white/80 mb-8 max-w-xl mx-auto">
+                                        {currentLocale === "de" ? "Lassen Sie uns zusammenarbeiten!" : currentLocale === "en" ? "Let's work together!" : "Birlikte çalışalım!"}
+                                    </p>
+                                    <Link href="/contact">
+                                        <button className="bg-white text-cyan-600 px-8 py-4 rounded-full font-semibold hover:bg-cyan-50 transition-all shadow-lg inline-flex items-center gap-2">
+                                            {currentLocale === "de" ? "Kontakt aufnehmen" : currentLocale === "en" ? "Get in Touch" : "İletişime Geç"}
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
-                            {/* Görsel */}
-                            <div className="w-full md:w-1/2 md:order-1">
-                                <Image
-                                    src="/yolov.jpeg"
-                                    alt="YOLOv Vehicle Classification"
-                                    width={600}
-                                    height={400}
-                                    className="rounded-lg shadow-lg object-cover w-full h-auto"
-                                />
-                            </div>
-                        </div>
-                    </FadeInSection>
-                </div>
-            </main>
+                        </FadeInSection>
+                    </div>
+                </section>
+            </div>
         </>
     );
 }

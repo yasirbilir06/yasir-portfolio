@@ -8,6 +8,18 @@ html, body {
   background: linear-gradient(to bottom, #00bcd4, #ffffff); /* Turkuazdan beyaza geçiş */
   color: #171717;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling on rotation */
+}
+
+/* Prevent horizontal overflow */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
 }
 
 #__next {
@@ -17,4 +29,122 @@ html, body {
 
 * {
   box-sizing: border-box;
+}
+
+/* Language dropdown animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Horizontal bounce animation for scroll indicator */
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* Custom scrollbar for experience cards */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Floating animation for hero section elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Slow spin for decorative elements */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Pulse delay utility */
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Mobile touch scrolling improvements */
+.snap-x {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar on mobile but keep functionality */
+@media (max-width: 640px) {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: pageIn 0.3s ease-out;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

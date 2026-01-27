@@ -5,10 +5,14 @@ import { useRouter } from "next/router";
 export default function Footer() {
     const { locale } = useRouter();
 
-    const copyright =
-        locale === "en"
-            ? "© 2025 Yasir Bilir. All rights reserved."
-            : "© 2025 Yasir Bilir. Tüm hakları saklıdır.";
+    const copyrights = {
+        tr: "© 2025 Yasir Bilir. Tüm hakları saklıdır.",
+        en: "© 2025 Yasir Bilir. All rights reserved.",
+        de: "© 2025 Yasir Bilir. Alle Rechte vorbehalten.",
+    };
+    type LocaleKey = "tr" | "en" | "de";
+    const currentLocale = (locale || "tr") as LocaleKey;
+    const copyright = copyrights[currentLocale] || copyrights.tr;
 
     return (
         <footer className="bg-gradient-to-t from-cyan-100 via-white to-white py-8 px-4 sm:px-6 mt-20">
