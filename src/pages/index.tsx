@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import ExperienceTimeline from "@/companents/ExperienceTimeline";
+import GurJobSection from "@/companents/GurJobSection";
 import Head from "next/head";
 
 // HeroSection SSR olmadan import ediliyor
@@ -19,6 +20,7 @@ export default function Home() {
             </Head>
             <main className="min-h-screen bg-slate-900">
                 <HeroSection />
+                <GurJobSection />
                 <ExperienceTimeline />
             </main>
         </>
