@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+type LocaleKey = "tr" | "en" | "de";
 
 const screenshotCards = [
     {
@@ -29,11 +32,31 @@ const screenshotCards = [
 ];
 
 const featureItems = [
-    "Apple ve Google ile hızlı giriş",
-    "Gerçek iş ilanlarını keşfet",
-    "Profilini oluştur, öne çık",
-    "Dakikalar içinde ilan ver",
-    "İlanlarını ve başvurularını yönet",
+    {
+        tr: "Apple ve Google ile hızlı giriş",
+        en: "Fast sign in with Apple and Google",
+        de: "Schneller Login mit Apple und Google",
+    },
+    {
+        tr: "Gerçek iş ilanlarını keşfet",
+        en: "Discover real job listings",
+        de: "Echte Stellenanzeigen entdecken",
+    },
+    {
+        tr: "Profilini oluştur, öne çık",
+        en: "Build your profile and stand out",
+        de: "Profil erstellen und hervorstechen",
+    },
+    {
+        tr: "Dakikalar içinde ilan ver",
+        en: "Publish listings in minutes",
+        de: "Anzeigen in Minuten veröffentlichen",
+    },
+    {
+        tr: "İlanlarını ve başvurularını yönet",
+        en: "Manage listings and applications",
+        de: "Anzeigen und Bewerbungen verwalten",
+    },
 ];
 
 const desktopOffsets = [
@@ -46,6 +69,40 @@ const desktopOffsets = [
 ];
 
 export default function GurJobSection() {
+    const { locale } = useRouter();
+    const currentLocale = (locale || "tr") as LocaleKey;
+
+    const content = {
+        tr: {
+            badge: "Öne Çıkan Proje",
+            headline: "Avrupa'daki Türk işletmelerde iş fırsatlarını keşfet ve doğrudan başvur.",
+            description:
+                "GurJob, Avrupa'daki Türk işletmeler ile iş arayanları buluşturan modern bir platformdur. Gerçek ilanları keşfet, hızlıca başvur veya dakikalar içinde ilan ver.",
+            reviewProject: "Projeyi İncele",
+            appStoreSoon: "Yakında App Store'da",
+            swipeHint: "Kaydırarak tüm ekranları inceleyebilirsin.",
+        },
+        en: {
+            badge: "Featured Project",
+            headline: "Discover job opportunities in Turkish businesses across Europe and apply directly.",
+            description:
+                "GurJob is a modern platform connecting Turkish businesses in Europe with job seekers. Discover real listings, apply quickly, or publish jobs in minutes.",
+            reviewProject: "View Case Study",
+            appStoreSoon: "Coming Soon to App Store",
+            swipeHint: "Swipe to explore all product screens.",
+        },
+        de: {
+            badge: "Hervorgehobenes Projekt",
+            headline: "Entdecke Jobchancen in türkischen Unternehmen in Europa und bewirb dich direkt.",
+            description:
+                "GurJob ist eine moderne Plattform, die türkische Unternehmen in Europa mit Jobsuchenden verbindet. Entdecke echte Stellenangebote, bewirb dich schnell oder veröffentliche Anzeigen in wenigen Minuten.",
+            reviewProject: "Case Study ansehen",
+            appStoreSoon: "Bald im App Store",
+            swipeHint: "Per Wischen alle Produktansichten entdecken.",
+        },
+    };
+    const t = content[currentLocale] || content.tr;
+
     return (
         <section id="gurjob" className="bg-slate-950 px-4 py-20 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-7xl">
@@ -53,44 +110,44 @@ export default function GurJobSection() {
                     <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-12">
                         <div>
                             <p className="mb-5 inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold tracking-[0.14em] text-cyan-300 uppercase">
-                                Öne Çıkan Proje
+                                {t.badge}
                             </p>
 
                             <h2 className="max-w-xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                                Avrupa&apos;daki Türk işletmelerde iş fırsatlarını keşfet ve doğrudan başvur.
+                                {t.headline}
                             </h2>
 
                             <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-                                GurJob, Avrupa&apos;daki Türk işletmeler ile iş arayanları buluşturan modern bir platformdur. Gerçek ilanları keşfet, hızlıca başvur veya dakikalar içinde ilan ver.
+                                {t.description}
                             </p>
 
                             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                                {featureItems.map((item) => (
+                                {featureItems.map((item, index) => (
                                     <li
-                                        key={item}
+                                        key={`${index}-${item.tr}`}
                                         className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-slate-200"
                                     >
                                         <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
-                                        {item}
+                                        {item[currentLocale]}
                                     </li>
                                 ))}
                             </ul>
 
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <Link
-                                    href="/projects"
-                                    aria-label="GurJob projesini incele"
+                                    href="/projects/gurjob"
+                                    aria-label={t.reviewProject}
                                     className="inline-flex items-center rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-400"
                                 >
-                                    Projeyi İncele
+                                    {t.reviewProject}
                                 </Link>
                                 <button
                                     type="button"
                                     disabled
-                                    aria-label="GurJob yakında App Store'da"
+                                    aria-label={t.appStoreSoon}
                                     className="inline-flex cursor-not-allowed items-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-300"
                                 >
-                                    Yakında App Store&apos;da
+                                    {t.appStoreSoon}
                                 </button>
                             </div>
                         </div>
@@ -139,7 +196,7 @@ export default function GurJobSection() {
                             </div>
 
                             <p className="text-xs text-slate-400 md:hidden">
-                                Kaydırarak tüm ekranları inceleyebilirsin.
+                                {t.swipeHint}
                             </p>
                         </div>
                     </div>

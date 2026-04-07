@@ -15,7 +15,18 @@ const translations = {
         
         featured: "Öne Çıkan",
         allProjects: "Tüm Projeler",
-        
+
+        gurJobTitle: "GurJob",
+        gurJobSubtitle: "Çok Taraflı İş Platformu",
+        gurJobTag: "Mobil Ürün Case Study",
+        gurJobDesc: "Avrupa'daki Türk işletmeler ile iş arayanları buluşturan çok taraflı mobil platform. Rol bazlı onboarding, sosyal giriş, veri tutarlılığı ve ödeme doğrulamalı yayın akışı ile gerçek ürün problemlerini çözer.",
+        gurJobFeatures: [
+            "İşveren / İş Arayan rol ayrımı",
+            "Apple & Google sosyal giriş",
+            "Supabase auth + role integrity",
+            "Stripe webhook tabanlı yayınlama",
+        ],
+
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Diyetisyen Takip Uygulaması",
         nutriPocketDesc: "Diyetisyenler ve danışanları tek platformda buluşturan, kapsamlı bir mobil sağlık uygulaması. Kullanıcı arayüzünden veri yönetimine kadar tüm sistemler sıfırdan geliştirildi.",
@@ -47,7 +58,18 @@ const translations = {
         
         featured: "Featured",
         allProjects: "All Projects",
-        
+
+        gurJobTitle: "GurJob",
+        gurJobSubtitle: "Multi-sided Hiring Platform",
+        gurJobTag: "Mobile Product Case Study",
+        gurJobDesc: "A multi-sided mobile platform connecting Turkish businesses across Europe with job seekers. It solves real product challenges with role-based onboarding, social auth integrity, data consistency, and payment-confirmed publishing.",
+        gurJobFeatures: [
+            "Employer / Job Seeker role split",
+            "Apple & Google social login",
+            "Supabase auth + role integrity",
+            "Stripe webhook-based publication",
+        ],
+
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Dietitian Tracking App",
         nutriPocketDesc: "A comprehensive mobile health application that brings dietitians and clients together on one platform. All systems from UI to data management were built from scratch.",
@@ -79,7 +101,18 @@ const translations = {
         
         featured: "Hervorgehoben",
         allProjects: "Alle Projekte",
-        
+
+        gurJobTitle: "GurJob",
+        gurJobSubtitle: "Mehrseitige Jobplattform",
+        gurJobTag: "Mobile Product Case Study",
+        gurJobDesc: "Eine mehrseitige mobile Plattform, die türkische Unternehmen in Europa mit Jobsuchenden verbindet. Sie löst reale Produktprobleme mit rollenbasiertem Onboarding, Social-Login-Integrität, Datenkonsistenz und zahlungsbestätigter Veröffentlichung.",
+        gurJobFeatures: [
+            "Rollenaufteilung Arbeitgeber / Jobsuchende",
+            "Apple & Google Social Login",
+            "Supabase Auth + Rollenintegrität",
+            "Stripe Webhook-basierte Veröffentlichung",
+        ],
+
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Ernährungsberater-Tracking-App",
         nutriPocketDesc: "Eine umfassende mobile Gesundheitsanwendung, die Ernährungsberater und Klienten auf einer Plattform zusammenbringt. Alle Systeme von UI bis Datenverwaltung wurden von Grund auf entwickelt.",
@@ -145,16 +178,98 @@ export default function Projects() {
                 <section className="py-16 sm:py-24 px-4 sm:px-6">
                     <div className="max-w-6xl mx-auto space-y-16">
                         
-                        {/* NutriPocket - Featured Project */}
+                        {/* GurJob - Featured Project */}
                         <FadeInSection>
                             <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                {/* Featured Badge */}
                                 <div className="absolute top-6 left-6 z-10">
                                     <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
                                         ⭐ {t.featured}
                                     </span>
                                 </div>
-                                
+
+                                <div className="flex flex-col lg:flex-row">
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="grid grid-cols-2 gap-3 max-w-sm w-full">
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/images/gurjob/01_welcome.png"
+                                                    alt="GurJob Welcome"
+                                                    width={1290}
+                                                    height={2796}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/images/gurjob/03_listings.png"
+                                                    alt="GurJob Listings"
+                                                    width={1290}
+                                                    height={2796}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/images/gurjob/04_profile.png"
+                                                    alt="GurJob Profile"
+                                                    width={1290}
+                                                    height={2796}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/images/gurjob/06_manage.png"
+                                                    alt="GurJob Manage"
+                                                    width={1290}
+                                                    height={2796}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+                                        <div className="mb-2">
+                                            <span className="text-cyan-600 text-sm font-medium uppercase tracking-wider">{t.gurJobTag}</span>
+                                        </div>
+                                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                                            {t.gurJobTitle}
+                                        </h2>
+                                        <p className="text-lg text-cyan-600 font-medium mb-4">
+                                            {t.gurJobSubtitle}
+                                        </p>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {t.gurJobDesc}
+                                        </p>
+
+                                        <div className="mb-8">
+                                            <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {t.gurJobFeatures.map((feature, index) => (
+                                                    <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm">
+                                                        {feature}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <Link href="/projects/gurjob">
+                                            <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all shadow-lg hover:shadow-xl">
+                                                {t.viewDetails}
+                                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeInSection>
+
+                        {/* NutriPocket */}
+                        <FadeInSection>
+                            <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
                                 <div className="flex flex-col lg:flex-row">
                                     {/* Image Section */}
                                     <div className="lg:w-1/2 bg-gradient-to-br from-cyan-500 to-blue-600 p-8 sm:p-12 flex items-center justify-center">
