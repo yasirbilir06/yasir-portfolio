@@ -3,6 +3,7 @@ import FadeInSection from "../companents/FadeInSection";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import TechBadge from "@/companents/TechBadge";
 
 type LocaleKey = "tr" | "en" | "de";
 
@@ -247,9 +248,7 @@ export default function Projects() {
                                             <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
                                             <div className="flex flex-wrap gap-2">
                                                 {t.gurJobFeatures.map((feature, index) => (
-                                                    <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm">
-                                                        {feature}
-                                                    </span>
+                                                    <TechBadge key={index} label={feature} variant="light" />
                                                 ))}
                                             </div>
                                         </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import FadeInSection from "@/companents/FadeInSection";
+import TechBadge from "@/companents/TechBadge";
 
 type LocaleKey = "tr" | "en" | "de";
 
@@ -14,6 +15,59 @@ const screenshots = [
     "/images/gurjob/05_post.png",
     "/images/gurjob/06_manage.png",
 ];
+
+const techGroupVisuals = [
+    {
+        icon: "/tech/swift.svg",
+        iconMode: "brand",
+        accent: "from-orange-500/20 to-rose-500/5",
+        label: {
+            tr: "Mobil uygulama katmanı",
+            en: "Mobile application layer",
+            de: "Mobile Anwendungsschicht",
+        },
+    },
+    {
+        icon: "/tech/supabase.svg",
+        iconMode: "brand",
+        accent: "from-emerald-500/20 to-emerald-500/5",
+        label: {
+            tr: "Backend ve veri altyapısı",
+            en: "Backend and data infrastructure",
+            de: "Backend- und Dateninfrastruktur",
+        },
+    },
+    {
+        icon: "/tech/apple.svg",
+        iconMode: "mono",
+        accent: "from-slate-500/20 to-slate-500/5",
+        label: {
+            tr: "Kimlik bütünlüğü ve güven",
+            en: "Identity integrity and trust",
+            de: "Identitätsintegrität und Vertrauen",
+        },
+    },
+    {
+        icon: "/tech/stripe.svg",
+        iconMode: "brand",
+        accent: "from-indigo-500/20 to-violet-500/5",
+        label: {
+            tr: "Monetization ve yayınlama",
+            en: "Monetization and publication",
+            de: "Monetarisierung und Veröffentlichung",
+        },
+    },
+    {
+        icon: "/tech/nextdotjs.svg",
+        iconMode: "mono",
+        accent: "from-cyan-500/20 to-sky-500/5",
+        label: {
+            tr: "Portfolyo sunum katmanı",
+            en: "Portfolio presentation layer",
+            de: "Portfolio-Präsentationsschicht",
+        },
+    },
+] as const;
 
 const translations = {
     tr: {
@@ -673,18 +727,41 @@ export default function GurJobProjectPage() {
                         <FadeInSection>
                             <h2 className="text-2xl font-semibold text-white sm:text-3xl">{t.sectionTitles.techStack}</h2>
                             <div className="mt-6 grid gap-4 md:grid-cols-2">
-                                {t.techStack.map((group) => (
-                                    <article key={group.title} className="rounded-2xl border border-white/10 bg-slate-900/75 p-5">
-                                        <h3 className="text-base font-semibold text-cyan-300">{group.title}</h3>
-                                        <div className="mt-4 flex flex-wrap gap-2">
-                                            {group.items.map((item) => (
-                                                <span key={item} className="rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-slate-200">
-                                                    {item}
+                                {t.techStack.map((group, index) => {
+                                    const visual = techGroupVisuals[index];
+
+                                    return (
+                                        <article key={group.title} className="rounded-2xl border border-white/10 bg-slate-900/75 p-5 shadow-[0_12px_32px_-20px_rgba(6,182,212,0.5)]">
+                                            <div className={`inline-flex items-center gap-2 rounded-xl border border-white/10 bg-gradient-to-r ${visual?.accent || "from-white/10 to-white/5"} px-3 py-1.5`}>
+                                                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-950/70">
+                                                    {visual?.icon ? (
+                                                        <Image
+                                                            src={visual.icon}
+                                                            alt={group.title}
+                                                            width={16}
+                                                            height={16}
+                                                            className={visual.iconMode === "mono" ? "invert" : ""}
+                                                        />
+                                                    ) : (
+                                                        <svg className="h-4 w-4 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                                                            <path d="M12 3v18M3 12h18" />
+                                                        </svg>
+                                                    )}
                                                 </span>
-                                            ))}
-                                        </div>
-                                    </article>
-                                ))}
+                                                <span className="text-[11px] tracking-[0.08em] text-slate-300 uppercase">
+                                                    {visual?.label[currentLocale] || group.title}
+                                                </span>
+                                            </div>
+
+                                            <h3 className="mt-4 text-base font-semibold text-cyan-300">{group.title}</h3>
+                                            <div className="mt-4 flex flex-wrap gap-2">
+                                                {group.items.map((item) => (
+                                                    <TechBadge key={item} label={item} variant="dark" />
+                                                ))}
+                                            </div>
+                                        </article>
+                                    );
+                                })}
                             </div>
                         </FadeInSection>
                     </div>
