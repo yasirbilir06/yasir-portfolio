@@ -16,52 +16,52 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
     description,
     duration,
 }) => (
-    <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 min-w-[320px] max-w-[320px] overflow-hidden hover:-translate-y-1">
+    <div className="group relative min-w-[320px] max-w-[320px] overflow-hidden rounded-3xl border border-white/80 bg-gradient-to-b from-white to-slate-50 shadow-[0_18px_45px_-28px_rgba(14,116,144,0.5)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_55px_-25px_rgba(14,116,144,0.6)]">
         {/* Üst gradient şerit */}
-        <div className="h-2 bg-gradient-to-r from-cyan-500 to-cyan-600" />
+        <div className="h-1.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500" />
         
-        <div className="p-5">
+        <div className="p-6">
             {/* Üst kısım: Logo ve Süre */}
-            <div className="flex items-start justify-between mb-4">
+            <div className="mb-5 flex items-start justify-between gap-3">
                 {/* Logo */}
-                <div className="w-16 h-16 flex-shrink-0 rounded-xl bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center overflow-hidden shadow-sm">
+                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-sky-100 shadow-sm">
                     {logoSrc ? (
                         <Image
                             src={logoSrc}
                             alt={`${company} logo`}
                             width={56}
                             height={56}
-                            className="object-contain p-1"
+                            className="object-contain p-1.5"
                         />
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-500 to-cyan-600 text-white text-2xl font-bold">
+                        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-cyan-500 to-cyan-600 text-2xl font-bold text-white">
                             {company.charAt(0)}
                         </div>
                     )}
                 </div>
                 
                 {/* Süre Badge */}
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-50 text-cyan-700 border border-cyan-200">
+                <span className="inline-flex items-center rounded-full border border-cyan-200 bg-white px-3 py-1 text-xs font-semibold text-cyan-700 shadow-sm">
                     {duration}
                 </span>
             </div>
 
             {/* İçerik */}
-            <div className="space-y-2">
-                <h3 className="text-lg font-bold text-gray-800 group-hover:text-cyan-600 transition-colors">
+            <div className="space-y-2.5">
+                <h3 className="text-xl font-bold text-slate-800 transition-colors group-hover:text-cyan-700">
                     {position}
                 </h3>
-                <p className="text-sm font-semibold text-cyan-600">
+                <p className="text-sm font-semibold text-cyan-700">
                     {company}
                 </p>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm leading-relaxed text-slate-600">
                     {description}
                 </p>
             </div>
         </div>
 
         {/* Hover efekti için alt gölge */}
-        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-cyan-400 to-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-cyan-300 to-blue-500 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100" />
     </div>
 );
 

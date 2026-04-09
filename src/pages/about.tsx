@@ -9,7 +9,7 @@ type LocaleKey = "tr" | "en" | "de";
 const translations = {
     tr: {
         pageTitle: "Hakkımda | Yasir Bilir",
-        metaDesc: "Muhammed Yasir Bilir hakkında detaylı bilgiler. React Native ve Swift üzerine uzmanlaşmış, Avrupa odaklı kariyer hedefleri olan mobil uygulama geliştiricisi.",
+        metaDesc: "Muhammed Yasir Bilir hakkında detaylı bilgiler. React Native, SwiftUI ve Supabase ile ürün odaklı mobil uygulamalar geliştiren yazılım mühendisi.",
         title: "Hakkımda",
         
         greeting: "Merhaba, Ben",
@@ -26,18 +26,18 @@ const translations = {
         reactNative: "React Native",
         reactNativeDesc: "TypeScript ile ölçeklenebilir cross-platform uygulamalar",
         
-        swift: "Swift & SwiftUI",
-        swiftDesc: "Modern iOS mimarileri ve Apple ekosistemi",
+        swift: "SwiftUI",
+        swiftDesc: "Modern iOS arayüz geliştirme ve Apple ekosistemi",
         
         python: "Python",
         pythonDesc: "Otomasyon, scripting ve veri işleme çözümleri",
         
-        backend: "Java Backend",
-        backendDesc: "Spring Boot, RESTful API ve mikroservis mimarisi",
+        backend: "Supabase",
+        backendDesc: "Auth, PostgreSQL ve gerçek zamanlı veri akışları",
         
         projectTitle: "Öne Çıkan Proje",
-        nutriPocket: "NutriPocket",
-        nutriPocketDesc: "Diyetisyenler ile danışanları tek platformda buluşturan mobil uygulama. UI, veri yönetimi ve güvenlik sistemleri sıfırdan geliştirildi.",
+        nutriPocket: "GurJob",
+        nutriPocketDesc: "Avrupa'daki Türk işletmeler ile iş arayanları buluşturan çok taraflı mobil platform. Rol bazlı onboarding, sosyal giriş, ödeme doğrulaması ve veri tutarlılığı kurgulandı.",
         
         educationTitle: "Eğitim",
         university: "Selçuk Üniversitesi",
@@ -50,7 +50,7 @@ const translations = {
         
         goalsTitle: "Kariyer Hedeflerim",
         goal1: "Swift/SwiftUI ile profesyonel iOS uygulamaları",
-        goal2: "Java ile ölçeklenebilir backend sistemleri",
+        goal2: "Supabase ile güvenli backend ve veri tutarlılığı",
         goal3: "Uluslararası projelerde aktif rol",
         
         hobbiesTitle: "İlgi Alanlarım",
@@ -63,7 +63,7 @@ const translations = {
     },
     en: {
         pageTitle: "About Me | Yasir Bilir",
-        metaDesc: "Learn more about Muhammed Yasir Bilir, a passionate mobile app developer specializing in React Native and Swift, with Europe-focused career goals.",
+        metaDesc: "Learn more about Muhammed Yasir Bilir, a product-focused mobile developer working with React Native, SwiftUI and Supabase.",
         title: "About Me",
         
         greeting: "Hi, I'm",
@@ -80,18 +80,18 @@ const translations = {
         reactNative: "React Native",
         reactNativeDesc: "Scalable cross-platform apps with TypeScript",
         
-        swift: "Swift & SwiftUI",
-        swiftDesc: "Modern iOS architectures and Apple ecosystem",
+        swift: "SwiftUI",
+        swiftDesc: "Modern iOS interface development and Apple ecosystem",
         
         python: "Python",
         pythonDesc: "Automation, scripting and data processing solutions",
         
-        backend: "Java Backend",
-        backendDesc: "Spring Boot, RESTful API and microservices architecture",
+        backend: "Supabase",
+        backendDesc: "Auth, PostgreSQL and real-time data workflows",
         
         projectTitle: "Featured Project",
-        nutriPocket: "NutriPocket",
-        nutriPocketDesc: "A mobile app connecting dietitians and clients on one platform. UI, data management and security systems built from scratch.",
+        nutriPocket: "GurJob",
+        nutriPocketDesc: "A multi-sided mobile platform connecting Turkish businesses across Europe with job seekers. Role-based onboarding, social auth, payment verification and data consistency are core parts.",
         
         educationTitle: "Education",
         university: "Selçuk University",
@@ -104,7 +104,7 @@ const translations = {
         
         goalsTitle: "Career Goals",
         goal1: "Professional iOS apps with Swift/SwiftUI",
-        goal2: "Scalable backend systems with Java",
+        goal2: "Secure backend and data consistency with Supabase",
         goal3: "Active role in international projects",
         
         hobbiesTitle: "Interests",
@@ -134,18 +134,18 @@ const translations = {
         reactNative: "React Native",
         reactNativeDesc: "Skalierbare Cross-Platform Apps mit TypeScript",
         
-        swift: "Swift & SwiftUI",
-        swiftDesc: "Moderne iOS-Architekturen und Apple-Ökosystem",
+        swift: "SwiftUI",
+        swiftDesc: "Moderne iOS-Interface-Entwicklung und Apple-Ökosystem",
         
         python: "Python",
         pythonDesc: "Automatisierung, Scripting und Datenverarbeitung",
         
-        backend: "Java Backend",
-        backendDesc: "Spring Boot, RESTful API und Microservices-Architektur",
+        backend: "Supabase",
+        backendDesc: "Auth, PostgreSQL und Echtzeit-Datenflüsse",
         
         projectTitle: "Hauptprojekt",
-        nutriPocket: "NutriPocket",
-        nutriPocketDesc: "Eine App, die Ernährungsberater und Klienten verbindet. UI, Datenverwaltung und Sicherheit von Grund auf entwickelt.",
+        nutriPocket: "GurJob",
+        nutriPocketDesc: "Eine mehrseitige mobile Plattform, die türkische Unternehmen in Europa mit Jobsuchenden verbindet. Rollenbasiertes Onboarding, Social Login, Zahlungsbestätigung und Datenkonsistenz wurden umgesetzt.",
         
         educationTitle: "Ausbildung",
         university: "Selçuk Universität",
@@ -158,7 +158,7 @@ const translations = {
         
         goalsTitle: "Karriereziele",
         goal1: "Professionelle iOS-Apps mit Swift/SwiftUI",
-        goal2: "Skalierbare Backend-Systeme mit Java",
+        goal2: "Sicheres Backend und Datenkonsistenz mit Supabase",
         goal3: "Aktive Rolle in internationalen Projekten",
         
         hobbiesTitle: "Interessen",
@@ -178,9 +178,9 @@ export default function About() {
 
     const skills = [
         { name: t.reactNative, desc: t.reactNativeDesc, icon: "/reactnative.svg", isImage: true },
-        { name: t.swift, desc: t.swiftDesc, icon: "/swift-icon.png", isImage: true },
+        { name: t.swift, desc: t.swiftDesc, icon: "/tech/swift.svg", isImage: true },
         { name: t.python, desc: t.pythonDesc, icon: "/python.png", isImage: true },
-        { name: t.backend, desc: t.backendDesc, icon: "/java.png", isImage: true },
+        { name: t.backend, desc: t.backendDesc, icon: "/tech/supabase.svg", isImage: true },
     ];
 
     const goals = [t.goal1, t.goal2, t.goal3];
@@ -315,7 +315,7 @@ export default function About() {
                                     <p className="text-cyan-100 text-sm font-medium mb-2 uppercase tracking-wider">{t.projectTitle}</p>
                                     <h3 className="text-3xl sm:text-4xl font-bold mb-4">{t.nutriPocket}</h3>
                                     <p className="text-white/90 text-lg leading-relaxed mb-6 max-w-2xl">{t.nutriPocketDesc}</p>
-                                    <Link href="/projects/nutripocket">
+                                    <Link href="/projects/gurjob">
                                         <button className="bg-white text-cyan-600 px-6 py-3 rounded-full font-semibold hover:bg-cyan-50 transition-all inline-flex items-center gap-2">
                                             {currentLocale === "de" ? "Mehr erfahren" : currentLocale === "en" ? "Learn More" : "Detayları Gör"}
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

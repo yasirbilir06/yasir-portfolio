@@ -143,32 +143,49 @@ export default function ExperienceTimeline() {
     const currentLocale = (locale || "tr") as LocaleKey;
     const t = experiences[currentLocale] || experiences.tr;
     const sectionTitles = { tr: "Deneyimlerim", en: "My Experiences", de: "Meine Erfahrungen" };
+    const sectionSubtitles = {
+        tr: "Eğitimden profesyonel ürün geliştirmeye uzanan yolculuk",
+        en: "Journey from education to professional product development",
+        de: "Weg von Ausbildung zu professioneller Produktentwicklung",
+    };
+    const swipeHint = { tr: "Daha fazlası için kaydırın", en: "Swipe for more", de: "Wischen für mehr" };
     const sectionTitle = sectionTitles[currentLocale] || sectionTitles.tr;
+    const sectionSubtitle = sectionSubtitles[currentLocale] || sectionSubtitles.tr;
 
     return (
-        <section className="bg-gradient-to-b from-cyan-400 via-cyan-300 to-cyan-400 py-20 px-4 sm:px-6">
-            {/* Başlık */}
-            <div className="text-center mb-12">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{sectionTitle}</h2>
-                <div className="w-20 h-1 bg-white/50 mx-auto rounded-full" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-20 px-4 sm:px-6">
+            <div className="pointer-events-none absolute inset-0">
+                <div className="absolute -top-16 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-500/15 blur-3xl" />
+                <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl" />
             </div>
-            
-            {/* Kartlar */}
-            <div className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-cyan-600 scrollbar-track-transparent">
-                {t.map((exp, i) => (
-                    <div key={i} className="snap-start">
-                        <ExperienceCard {...exp} />
+
+            <div className="relative mx-auto max-w-7xl">
+                {/* Başlık */}
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">{sectionTitle}</h2>
+                    <p className="mx-auto max-w-2xl text-sm sm:text-base text-slate-300">{sectionSubtitle}</p>
+                    <div className="mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto" />
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 sm:p-6 shadow-[0_24px_55px_-35px_rgba(6,182,212,0.45)] backdrop-blur-sm">
+                    {/* Kartlar */}
+                    <div className="flex gap-5 overflow-x-auto pb-4 px-1 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-cyan-500/70 scrollbar-track-transparent">
+                        {t.map((exp, i) => (
+                            <div key={i} className="snap-start">
+                                <ExperienceCard {...exp} />
+                            </div>
+                        ))}
                     </div>
-                ))}
+
+                    {/* Scroll göstergesi */}
+                    <p className="text-center text-cyan-100/90 text-sm mt-2 flex items-center justify-center gap-2">
+                        <svg className="w-4 h-4 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        {swipeHint[currentLocale]}
+                    </p>
+                </div>
             </div>
-            
-            {/* Scroll göstergesi */}
-            <p className="text-center text-white/70 text-sm mt-4 flex items-center justify-center gap-2">
-                <svg className="w-4 h-4 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-                {currentLocale === "de" ? "Wischen für mehr" : currentLocale === "en" ? "Swipe for more" : "Daha fazlası için kaydırın"}
-            </p>
         </section>
     );
 }

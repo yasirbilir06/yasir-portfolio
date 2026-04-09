@@ -13,7 +13,7 @@ export default function HeroSection() {
             greeting: "Merhaba, Ben",
             name: "Yasir Bilir",
             role: "Mobile App Developer",
-            description: "React Native ve Swift ile modern mobil uygulamalar geliştiriyorum. Kullanıcı deneyimi odaklı, performanslı ve ölçeklenebilir çözümler sunuyorum.",
+            description: "React Native, SwiftUI ve Supabase ile modern mobil ürünler geliştiriyorum. Kullanıcı deneyimi odaklı, performanslı ve ölçeklenebilir çözümler sunuyorum.",
             viewProjects: "Projelerimi Gör",
             contactMe: "İletişime Geç",
             available: "İş fırsatlarına açığım",
@@ -34,7 +34,7 @@ export default function HeroSection() {
             greeting: "Hi, I'm",
             name: "Yasir Bilir",
             role: "Mobile App Developer",
-            description: "I develop modern mobile applications with React Native and Swift. I provide user experience focused, performant and scalable solutions.",
+            description: "I build modern mobile products with React Native, SwiftUI and Supabase. I deliver user-focused, performant and scalable solutions.",
             viewProjects: "View Projects",
             contactMe: "Contact Me",
             available: "Open to opportunities",
@@ -55,7 +55,7 @@ export default function HeroSection() {
             greeting: "Hallo, ich bin",
             name: "Yasir Bilir",
             role: "Mobile App Developer",
-            description: "Ich entwickle moderne mobile Anwendungen mit React Native und Swift. Ich biete benutzerzentrierte, performante und skalierbare Lösungen.",
+            description: "Ich entwickle moderne mobile Produkte mit React Native, SwiftUI und Supabase. Ich liefere benutzerzentrierte, performante und skalierbare Lösungen.",
             viewProjects: "Projekte ansehen",
             contactMe: "Kontakt",
             available: "Offen für Möglichkeiten",
@@ -80,9 +80,9 @@ export default function HeroSection() {
 
     const techStack = [
         { name: "React Native", icon: "/reactnative.svg", isImage: true },
-        { name: "Swift", icon: "/swift-icon.png", isImage: true },
+        { name: "SwiftUI", icon: "/tech/swift.svg", isImage: true },
         { name: "Python", icon: "/python.png", isImage: true },
-        { name: "Java", icon: "/java.png", isImage: true },
+        { name: "Supabase", icon: "/tech/supabase.svg", isImage: true },
     ];
 
     const socialLinks = [
