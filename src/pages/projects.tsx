@@ -20,6 +20,7 @@ const translations = {
         gurJobTitle: "GurJob",
         gurJobSubtitle: "Çok Taraflı İş Platformu",
         gurJobTag: "Mobil Ürün Case Study",
+        gurJobBuiltWith: "SwiftUI ile geliştirildi (iOS Native)",
         gurJobDesc: "Avrupa'daki Türk işletmeler ile iş arayanları buluşturan çok taraflı mobil platform. Rol bazlı onboarding, sosyal giriş, veri tutarlılığı ve ödeme doğrulamalı yayın akışı ile gerçek ürün problemlerini çözer.",
         gurJobFeatures: [
             "İşveren / İş Arayan rol ayrımı",
@@ -30,6 +31,8 @@ const translations = {
 
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Diyetisyen Takip Uygulaması",
+        nutriPocketTag: "Mobil Ürün Case Study",
+        nutriPocketBuiltWith: "React Native ile geliştirildi",
         nutriPocketDesc: "Diyetisyenler ve danışanları tek platformda buluşturan, kapsamlı bir mobil sağlık uygulaması. Kullanıcı arayüzünden veri yönetimine kadar tüm sistemler sıfırdan geliştirildi.",
         nutriPocketFeatures: [
             "React Native ile çapraz platform",
@@ -40,6 +43,8 @@ const translations = {
         
         yolovTitle: "Araç Sınıflandırma",
         yolovSubtitle: "YOLOv5 Deep Learning Projesi",
+        yolovTag: "AI Product Case Study",
+        yolovBuiltWith: "Python + YOLOv5 ile geliştirildi",
         yolovDesc: "Gerçek zamanlı görüntü işleme ile araç tiplerini yüksek doğrulukla tespit eden yapay zeka projesi.",
         yolovFeatures: [
             "Python & OpenCV",
@@ -49,6 +54,7 @@ const translations = {
         ],
         
         viewDetails: "Detayları Gör",
+        detailSoon: "Detay sayfası yakında",
         techStack: "Teknolojiler",
     },
     en: {
@@ -63,6 +69,7 @@ const translations = {
         gurJobTitle: "GurJob",
         gurJobSubtitle: "Multi-sided Hiring Platform",
         gurJobTag: "Mobile Product Case Study",
+        gurJobBuiltWith: "Built with SwiftUI (iOS Native)",
         gurJobDesc: "A multi-sided mobile platform connecting Turkish businesses across Europe with job seekers. It solves real product challenges with role-based onboarding, social auth integrity, data consistency, and payment-confirmed publishing.",
         gurJobFeatures: [
             "Employer / Job Seeker role split",
@@ -73,6 +80,8 @@ const translations = {
 
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Dietitian Tracking App",
+        nutriPocketTag: "Mobile Product Case Study",
+        nutriPocketBuiltWith: "Built with React Native",
         nutriPocketDesc: "A comprehensive mobile health application that brings dietitians and clients together on one platform. All systems from UI to data management were built from scratch.",
         nutriPocketFeatures: [
             "Cross-platform with React Native",
@@ -83,6 +92,8 @@ const translations = {
         
         yolovTitle: "Vehicle Classification",
         yolovSubtitle: "YOLOv5 Deep Learning Project",
+        yolovTag: "AI Product Case Study",
+        yolovBuiltWith: "Built with Python + YOLOv5",
         yolovDesc: "An AI project that detects vehicle types with high accuracy using real-time image processing.",
         yolovFeatures: [
             "Python & OpenCV",
@@ -92,6 +103,7 @@ const translations = {
         ],
         
         viewDetails: "View Details",
+        detailSoon: "Detail page coming soon",
         techStack: "Technologies",
     },
     de: {
@@ -106,6 +118,7 @@ const translations = {
         gurJobTitle: "GurJob",
         gurJobSubtitle: "Mehrseitige Jobplattform",
         gurJobTag: "Mobile Product Case Study",
+        gurJobBuiltWith: "Mit SwiftUI entwickelt (iOS Native)",
         gurJobDesc: "Eine mehrseitige mobile Plattform, die türkische Unternehmen in Europa mit Jobsuchenden verbindet. Sie löst reale Produktprobleme mit rollenbasiertem Onboarding, Social-Login-Integrität, Datenkonsistenz und zahlungsbestätigter Veröffentlichung.",
         gurJobFeatures: [
             "Rollenaufteilung Arbeitgeber / Jobsuchende",
@@ -116,6 +129,8 @@ const translations = {
 
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Ernährungsberater-Tracking-App",
+        nutriPocketTag: "Mobile Product Case Study",
+        nutriPocketBuiltWith: "Mit React Native entwickelt",
         nutriPocketDesc: "Eine umfassende mobile Gesundheitsanwendung, die Ernährungsberater und Klienten auf einer Plattform zusammenbringt. Alle Systeme von UI bis Datenverwaltung wurden von Grund auf entwickelt.",
         nutriPocketFeatures: [
             "Plattformübergreifend mit React Native",
@@ -126,6 +141,8 @@ const translations = {
         
         yolovTitle: "Fahrzeugklassifizierung",
         yolovSubtitle: "YOLOv5 Deep Learning Projekt",
+        yolovTag: "AI Product Case Study",
+        yolovBuiltWith: "Mit Python + YOLOv5 entwickelt",
         yolovDesc: "Ein KI-Projekt, das Fahrzeugtypen mit hoher Genauigkeit durch Echtzeit-Bildverarbeitung erkennt.",
         yolovFeatures: [
             "Python & OpenCV",
@@ -135,6 +152,7 @@ const translations = {
         ],
         
         viewDetails: "Details ansehen",
+        detailSoon: "Detailseite bald verfügbar",
         techStack: "Technologien",
     },
 };
@@ -240,6 +258,18 @@ export default function Projects() {
                                         <p className="text-lg text-cyan-600 font-medium mb-4">
                                             {t.gurJobSubtitle}
                                         </p>
+                                        <div className="mb-4">
+                                            <span className="inline-flex items-center gap-2 rounded-xl border border-cyan-100 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-700 shadow-sm">
+                                                <Image
+                                                    src="/tech/swiftui.png"
+                                                    alt="SwiftUI"
+                                                    width={18}
+                                                    height={18}
+                                                    className="rounded-md"
+                                                />
+                                                {t.gurJobBuiltWith}
+                                            </span>
+                                        </div>
                                         <p className="text-gray-600 mb-6 leading-relaxed">
                                             {t.gurJobDesc}
                                         </p>
@@ -270,41 +300,50 @@ export default function Projects() {
                         <FadeInSection>
                             <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
                                 <div className="flex flex-col lg:flex-row">
-                                    {/* Image Section */}
-                                    <div className="lg:w-1/2 bg-gradient-to-br from-cyan-500 to-blue-600 p-8 sm:p-12 flex items-center justify-center">
-                                        <div className="relative">
-                                            {/* Phone Frame */}
-                                            <div className="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl">
-                                                <div className="bg-slate-800 rounded-[2.5rem] overflow-hidden">
-                                                    <Image
-                                                        src="/screen/splashScreen2.png"
-                                                        alt="NutriPocket Screenshot"
-                                                        width={280}
-                                                        height={560}
-                                                        className="w-full h-auto"
-                                                    />
-                                                </div>
-                                                {/* Notch */}
-                                                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-full" />
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="grid grid-cols-2 gap-3 max-w-sm w-full">
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/screen/splashScreen2.png"
+                                                    alt="NutriPocket Splash"
+                                                    width={400}
+                                                    height={800}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
                                             </div>
-                                            
-                                            {/* Floating Tech Badge - Hidden on mobile */}
-                                            <div className="hidden sm:flex absolute -right-4 top-1/4 bg-white text-cyan-600 px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium animate-float items-center gap-2">
-                                                <div className="w-5 h-5 flex items-center justify-center">
-                                                    <Image src="/reactnative.svg" alt="React Native" width={20} height={20} className="object-contain" />
-                                                </div>
-                                                React Native
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/screen/chat.png"
+                                                    alt="NutriPocket Chat"
+                                                    width={400}
+                                                    height={800}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
                                             </div>
-                                            <div className="hidden sm:flex absolute -left-4 bottom-1/4 bg-white text-orange-500 px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium animate-float-delayed items-center gap-2">
-                                                🔥 Firebase
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/screen/konum.png"
+                                                    alt="NutriPocket Location"
+                                                    width={400}
+                                                    height={800}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/screen/randevu.png"
+                                                    alt="NutriPocket Appointment"
+                                                    width={400}
+                                                    height={800}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    {/* Content Section */}
+
                                     <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
                                         <div className="mb-2">
-                                            <span className="text-cyan-600 text-sm font-medium uppercase tracking-wider">Mobile App</span>
+                                            <span className="text-cyan-600 text-sm font-medium uppercase tracking-wider">{t.nutriPocketTag}</span>
                                         </div>
                                         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                                             {t.nutriPocketTitle}
@@ -312,22 +351,30 @@ export default function Projects() {
                                         <p className="text-lg text-cyan-600 font-medium mb-4">
                                             {t.nutriPocketSubtitle}
                                         </p>
+                                        <div className="mb-4">
+                                            <span className="inline-flex items-center gap-2 rounded-xl border border-cyan-100 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-700 shadow-sm">
+                                                <Image
+                                                    src="/reactnative.svg"
+                                                    alt="React Native"
+                                                    width={18}
+                                                    height={18}
+                                                />
+                                                {t.nutriPocketBuiltWith}
+                                            </span>
+                                        </div>
                                         <p className="text-gray-600 mb-6 leading-relaxed">
                                             {t.nutriPocketDesc}
                                         </p>
-                                        
-                                        {/* Tech Stack */}
+
                                         <div className="mb-8">
                                             <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
                                             <div className="flex flex-wrap gap-2">
                                                 {t.nutriPocketFeatures.map((feature, index) => (
-                                                    <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm">
-                                                        {feature}
-                                                    </span>
+                                                    <TechBadge key={index} label={feature} variant="light" />
                                                 ))}
                                             </div>
                                         </div>
-                                        
+
                                         <Link href="/projects/nutripocket">
                                             <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all shadow-lg hover:shadow-xl">
                                                 {t.viewDetails}
@@ -343,41 +390,44 @@ export default function Projects() {
 
                         {/* YOLOv Project */}
                         <FadeInSection>
-                            <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                <div className="flex flex-col lg:flex-row-reverse">
-                                    {/* Image Section */}
-                                    <div className="lg:w-1/2 bg-gradient-to-br from-purple-500 to-indigo-600 p-8 sm:p-12 flex items-center justify-center">
-                                        <div className="relative w-full max-w-md">
-                                            <div className="bg-slate-900 rounded-2xl p-4 shadow-2xl">
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                                                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                                                    <div className="w-3 h-3 rounded-full bg-green-500" />
-                                                    <span className="text-slate-400 text-xs ml-2">vehicle_detection.py</span>
-                                                </div>
+                            <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                                <div className="flex flex-col lg:flex-row">
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="grid grid-cols-2 gap-3 max-w-sm w-full">
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
                                                 <Image
                                                     src="/yolov.jpeg"
-                                                    alt="YOLOv Vehicle Classification"
+                                                    alt="YOLOv Detection"
                                                     width={400}
                                                     height={300}
-                                                    className="w-full h-auto rounded-lg"
+                                                    className="w-full h-auto rounded-xl"
                                                 />
                                             </div>
-                                            
-                                            {/* Floating Elements - Hidden on mobile */}
-                                            <div className="hidden sm:block absolute -right-4 top-8 bg-white text-purple-600 px-3 py-2 rounded-xl shadow-lg text-sm font-medium animate-float">
-                                                🐍 Python
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/yolov.jpeg"
+                                                    alt="YOLOv Prediction"
+                                                    width={400}
+                                                    height={300}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
                                             </div>
-                                            <div className="hidden sm:block absolute -left-4 bottom-8 bg-white text-indigo-600 px-3 py-2 rounded-xl shadow-lg text-sm font-medium animate-float-delayed">
-                                                🤖 YOLOv5
+                                            <div className="rounded-2xl border border-white/10 bg-white/10 p-4 shadow-lg backdrop-blur-sm">
+                                                <p className="text-xs font-semibold tracking-[0.08em] text-purple-100 uppercase">Model</p>
+                                                <p className="mt-2 text-white font-semibold">YOLOv5</p>
+                                                <p className="mt-1 text-xs text-purple-100/80">Real-time object detection</p>
+                                            </div>
+                                            <div className="rounded-2xl border border-white/10 bg-white/10 p-4 shadow-lg backdrop-blur-sm translate-y-3">
+                                                <p className="text-xs font-semibold tracking-[0.08em] text-purple-100 uppercase">Pipeline</p>
+                                                <p className="mt-2 text-white font-semibold">Flask API + Docker</p>
+                                                <p className="mt-1 text-xs text-purple-100/80">Deployment-ready workflow</p>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    {/* Content Section */}
+
                                     <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
                                         <div className="mb-2">
-                                            <span className="text-purple-600 text-sm font-medium uppercase tracking-wider">AI / Deep Learning</span>
+                                            <span className="text-purple-600 text-sm font-medium uppercase tracking-wider">{t.yolovTag}</span>
                                         </div>
                                         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                                             {t.yolovTitle}
@@ -385,21 +435,38 @@ export default function Projects() {
                                         <p className="text-lg text-purple-600 font-medium mb-4">
                                             {t.yolovSubtitle}
                                         </p>
+                                        <div className="mb-4">
+                                            <span className="inline-flex items-center gap-2 rounded-xl border border-purple-100 bg-purple-50 px-3 py-2 text-sm font-semibold text-purple-700 shadow-sm">
+                                                <Image
+                                                    src="/python.png"
+                                                    alt="Python"
+                                                    width={18}
+                                                    height={18}
+                                                    className="rounded-sm"
+                                                />
+                                                {t.yolovBuiltWith}
+                                            </span>
+                                        </div>
                                         <p className="text-gray-600 mb-6 leading-relaxed">
                                             {t.yolovDesc}
                                         </p>
-                                        
-                                        {/* Tech Stack */}
-                                        <div>
+
+                                        <div className="mb-8">
                                             <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
                                             <div className="flex flex-wrap gap-2">
                                                 {t.yolovFeatures.map((feature, index) => (
-                                                    <span key={index} className="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-lg text-sm border border-purple-100">
-                                                        {feature}
-                                                    </span>
+                                                    <TechBadge key={index} label={feature} variant="light" />
                                                 ))}
                                             </div>
                                         </div>
+
+                                        <button
+                                            type="button"
+                                            disabled
+                                            className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 px-6 py-3 font-semibold text-white opacity-80 shadow-lg"
+                                        >
+                                            {t.detailSoon}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
