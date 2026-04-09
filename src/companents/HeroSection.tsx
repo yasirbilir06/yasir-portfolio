@@ -80,7 +80,7 @@ export default function HeroSection() {
 
     const techStack = [
         { name: "React Native", icon: "/reactnative.svg", isImage: true },
-        { name: "SwiftUI", icon: "/tech/swift.svg", isImage: true },
+        { name: "SwiftUI", icon: "/tech/swiftui.png", isImage: true },
         { name: "Python", icon: "/python.png", isImage: true },
         { name: "Supabase", icon: "/tech/supabase.svg", isImage: true },
     ];

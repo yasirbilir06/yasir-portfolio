@@ -178,7 +178,7 @@ export default function About() {
 
     const skills = [
         { name: t.reactNative, desc: t.reactNativeDesc, icon: "/reactnative.svg", isImage: true },
-        { name: t.swift, desc: t.swiftDesc, icon: "/tech/swift.svg", isImage: true },
+        { name: t.swift, desc: t.swiftDesc, icon: "/tech/swiftui.png", isImage: true },
         { name: t.python, desc: t.pythonDesc, icon: "/python.png", isImage: true },
         { name: t.backend, desc: t.backendDesc, icon: "/tech/supabase.svg", isImage: true },
     ];

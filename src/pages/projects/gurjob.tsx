@@ -18,7 +18,7 @@ const screenshots = [
 
 const techGroupVisuals = [
     {
-        icon: "/tech/swift.svg",
+        icon: "/tech/swiftui.png",
         iconMode: "brand",
         accent: "from-orange-500/20 to-rose-500/5",
         label: {

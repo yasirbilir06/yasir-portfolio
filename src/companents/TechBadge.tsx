@@ -25,10 +25,10 @@ function resolveTechVisual(label: string): TechVisual {
     const text = normalizeText(label);
 
     if (text.includes("swiftui")) {
-        return { iconSrc: "/tech/swift.svg", iconAlt: "SwiftUI", iconMode: "brand" };
+        return { iconSrc: "/tech/swiftui.png", iconAlt: "SwiftUI", iconMode: "brand" };
     }
     if (text.includes("swift")) {
-        return { iconSrc: "/tech/swift.svg", iconAlt: "Swift", iconMode: "brand" };
+        return { iconSrc: "/tech/swiftui.png", iconAlt: "Swift", iconMode: "brand" };
     }
     if (text.includes("supabase")) {
         return { iconSrc: "/tech/supabase.svg", iconAlt: "Supabase", iconMode: "brand" };
