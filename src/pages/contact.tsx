@@ -12,7 +12,7 @@ type LocaleKey = "tr" | "en" | "de";
 const translations = {
     tr: {
         pageTitle: "İletişim | Yasir Bilir",
-        metaDesc: "Muhammed Yasir Bilir ile iletişime geçin. React Native ve Swift teknolojileri kullanarak profesyonel mobil uygulama geliştirme hizmetleri sunuyorum.",
+        metaDesc: "Yasir Bilir ile iletişime geçin. React Native ve Swift teknolojileri kullanarak profesyonel mobil uygulama geliştirme hizmetleri sunuyorum.",
         title: "İletişime Geçin",
         subtitle: "Bir projeniz mi var? Birlikte çalışalım!",
         
@@ -42,7 +42,7 @@ const translations = {
     },
     en: {
         pageTitle: "Contact | Yasir Bilir",
-        metaDesc: "Contact Muhammed Yasir Bilir for professional mobile app development services using React Native and Swift technologies.",
+        metaDesc: "Contact Yasir Bilir for professional mobile app development services using React Native and Swift technologies.",
         title: "Get in Touch",
         subtitle: "Have a project? Let's work together!",
         
@@ -72,7 +72,7 @@ const translations = {
     },
     de: {
         pageTitle: "Kontakt | Yasir Bilir",
-        metaDesc: "Kontaktieren Sie Muhammed Yasir Bilir für professionelle Mobile App Entwicklung mit React Native und Swift Technologien.",
+        metaDesc: "Kontaktieren Sie Yasir Bilir für professionelle Mobile App Entwicklung mit React Native und Swift Technologien.",
         title: "Kontakt aufnehmen",
         subtitle: "Haben Sie ein Projekt? Lassen Sie uns zusammenarbeiten!",
         

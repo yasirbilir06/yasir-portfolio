@@ -9,11 +9,11 @@ type LocaleKey = "tr" | "en" | "de";
 const translations = {
     tr: {
         pageTitle: "Hakkımda | Yasir Bilir",
-        metaDesc: "Muhammed Yasir Bilir hakkında detaylı bilgiler. React Native, SwiftUI ve Supabase ile ürün odaklı mobil uygulamalar geliştiren yazılım mühendisi.",
+        metaDesc: "Yasir Bilir hakkında detaylı bilgiler. React Native, SwiftUI ve Supabase ile ürün odaklı mobil uygulamalar geliştiren yazılım mühendisi.",
         title: "Hakkımda",
         
         greeting: "Merhaba, Ben",
-        name: "Muhammed Yasir Bilir",
+        name: "Yasir Bilir",
         role: "Mobile App Developer",
         location: "Worms, Almanya",
         bio: "Mobil uygulama geliştirmeye tutkuyla bağlı bir Bilgisayar Mühendisiyim. Selçuk Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Çifte vatandaş olarak Avrupa odaklı kariyer hedefleriyle yoluma devam ediyorum.",
@@ -63,11 +63,11 @@ const translations = {
     },
     en: {
         pageTitle: "About Me | Yasir Bilir",
-        metaDesc: "Learn more about Muhammed Yasir Bilir, a product-focused mobile developer working with React Native, SwiftUI and Supabase.",
+        metaDesc: "Learn more about Yasir Bilir, a product-focused mobile developer working with React Native, SwiftUI and Supabase.",
         title: "About Me",
         
         greeting: "Hi, I'm",
-        name: "Muhammed Yasir Bilir",
+        name: "Yasir Bilir",
         role: "Mobile App Developer",
         location: "Worms, Germany",
         bio: "I'm a Computer Engineer passionate about mobile app development. I graduated from Selçuk University with a degree in Computer Engineering. As a dual citizen, I continue my journey with Europe-focused career goals.",
@@ -117,11 +117,11 @@ const translations = {
     },
     de: {
         pageTitle: "Über mich | Yasir Bilir",
-        metaDesc: "Erfahren Sie mehr über Muhammed Yasir Bilir, einen leidenschaftlichen Mobile App Entwickler mit europaorientierten Karrierezielen.",
+        metaDesc: "Erfahren Sie mehr über Yasir Bilir, einen leidenschaftlichen Mobile App Entwickler mit europaorientierten Karrierezielen.",
         title: "Über mich",
         
         greeting: "Hallo, ich bin",
-        name: "Muhammed Yasir Bilir",
+        name: "Yasir Bilir",
         role: "Mobile App Developer",
         location: "Worms, Deutschland",
         bio: "Ich bin ein Informatiker mit Leidenschaft für Mobile App Entwicklung. Ich habe meinen Abschluss an der Selçuk Universität gemacht. Als Doppelstaatsbürger verfolge ich europaorientierte Karriereziele.",

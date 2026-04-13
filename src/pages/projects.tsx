@@ -10,7 +10,7 @@ type LocaleKey = "tr" | "en" | "de";
 const translations = {
     tr: {
         pageTitle: "Projeler | Yasir Bilir",
-        metaDesc: "Muhammed Yasir Bilir tarafından geliştirilen projeleri keşfedin...",
+        metaDesc: "Yasir Bilir tarafından geliştirilen projeleri keşfedin...",
         title: "Projelerim",
         subtitle: "Geliştirdiğim mobil uygulamalar ve yazılım projeleri",
         
@@ -71,7 +71,7 @@ const translations = {
     },
     en: {
         pageTitle: "Projects | Yasir Bilir",
-        metaDesc: "Explore projects developed by Muhammed Yasir Bilir...",
+        metaDesc: "Explore projects developed by Yasir Bilir...",
         title: "My Projects",
         subtitle: "Mobile applications and software projects I've developed",
         
@@ -132,7 +132,7 @@ const translations = {
     },
     de: {
         pageTitle: "Projekte | Yasir Bilir",
-        metaDesc: "Entdecken Sie die von Muhammed Yasir Bilir entwickelten Projekte...",
+        metaDesc: "Entdecken Sie die von Yasir Bilir entwickelten Projekte...",
         title: "Meine Projekte",
         subtitle: "Mobile Anwendungen und Softwareprojekte, die ich entwickelt habe",
         

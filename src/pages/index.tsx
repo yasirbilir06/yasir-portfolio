@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <Head>
                 <title>Yasir Bilir | Mobile App Developer</title>
-                <meta name="description" content="Muhammed Yasir Bilir - React Native ve Swift ile modern mobil uygulamalar geliştiren yazılım mühendisi." />
+                <meta name="description" content="Yasir Bilir - React Native ve Swift ile modern mobil uygulamalar geliştiren yazılım mühendisi." />
                 <meta property="og:title" content="Yasir Bilir | Mobile App Developer" />
                 <meta property="og:description" content="React Native ve Swift ile modern mobil uygulamalar geliştiriyorum." />
                 <meta property="og:type" content="website" />
