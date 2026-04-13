@@ -177,10 +177,10 @@ export default function About() {
     const t = translations[currentLocale] || translations.tr;
 
     const skills = [
-        { name: t.reactNative, desc: t.reactNativeDesc, icon: "/reactnative.svg", isImage: true },
         { name: t.swift, desc: t.swiftDesc, icon: "/tech/swiftui.png", isImage: true },
-        { name: t.python, desc: t.pythonDesc, icon: "/python.png", isImage: true },
+        { name: t.reactNative, desc: t.reactNativeDesc, icon: "/reactnative.svg", isImage: true },
         { name: t.backend, desc: t.backendDesc, icon: "/tech/supabase.svg", isImage: true },
+        { name: t.python, desc: t.pythonDesc, icon: "/python.png", isImage: true },
     ];
 
     const goals = [t.goal1, t.goal2, t.goal3];
