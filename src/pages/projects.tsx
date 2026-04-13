@@ -29,6 +29,18 @@ const translations = {
             "Stripe webhook tabanlı yayınlama",
         ],
 
+        pttTitle: "PTT Kargo Takip Otomasyonu",
+        pttSubtitle: "LegalTech Operasyon Otomasyonu",
+        pttTag: "Automation Case Study",
+        pttBuiltWith: "Python + Selenium ile geliştirildi",
+        pttDesc: "Mia Hukuk'ta yüksek hacimli dosyalar için geliştirilen otomasyon sistemi; PDF'den takip numarası okur, PTT sorgusunu otomatik yapar, teslim/iade durumlarını sınıflandırır ve sonuçları Excel'e işler.",
+        pttFeatures: [
+            "PDF takip no okuma",
+            "Selenium ile PTT sorgu akışı",
+            "Teslim / iade sınıflandırma",
+            "Excel'e otomatik çıktı üretimi",
+        ],
+
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Diyetisyen Takip Uygulaması",
         nutriPocketTag: "Mobil Ürün Case Study",
@@ -78,6 +90,18 @@ const translations = {
             "Stripe webhook-based publication",
         ],
 
+        pttTitle: "PTT Cargo Tracking Automation",
+        pttSubtitle: "LegalTech Operations Automation",
+        pttTag: "Automation Case Study",
+        pttBuiltWith: "Built with Python + Selenium",
+        pttDesc: "An automation system built for high-volume file operations at Mia Hukuk. It reads tracking numbers from PDFs, runs automated PTT queries, classifies delivery/return outcomes, and exports results to Excel.",
+        pttFeatures: [
+            "Tracking extraction from PDFs",
+            "Automated PTT query flow",
+            "Delivery / return classification",
+            "Automatic Excel output generation",
+        ],
+
         nutriPocketTitle: "NutriPocket",
         nutriPocketSubtitle: "Dietitian Tracking App",
         nutriPocketTag: "Mobile Product Case Study",
@@ -125,6 +149,18 @@ const translations = {
             "Apple & Google Social Login",
             "Supabase Auth + Rollenintegrität",
             "Stripe Webhook-basierte Veröffentlichung",
+        ],
+
+        pttTitle: "PTT Sendungsverfolgungs-Automation",
+        pttSubtitle: "LegalTech Prozessautomatisierung",
+        pttTag: "Automation Case Study",
+        pttBuiltWith: "Mit Python + Selenium entwickelt",
+        pttDesc: "Ein Automationssystem für hochvolumige Aktenprozesse bei Mia Hukuk. Es liest Trackingnummern aus PDFs, führt automatische PTT-Abfragen aus, klassifiziert Zustellung/Rücksendung und überträgt Ergebnisse nach Excel.",
+        pttFeatures: [
+            "Trackingnummern aus PDFs extrahieren",
+            "Automatisierter PTT-Abfragefluss",
+            "Zustellung / Rücksendung klassifizieren",
+            "Automatische Excel-Ausgabe",
         ],
 
         nutriPocketTitle: "NutriPocket",
@@ -284,6 +320,90 @@ export default function Projects() {
                                         </div>
 
                                         <Link href="/projects/gurjob">
+                                            <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all shadow-lg hover:shadow-xl">
+                                                {t.viewDetails}
+                                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeInSection>
+
+                        {/* PTT Cargo Automation */}
+                        <FadeInSection>
+                            <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                                <div className="flex flex-col lg:flex-row">
+                                    <div className="lg:w-1/2 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-8 sm:p-12 flex items-center justify-center">
+                                        <div className="grid grid-cols-2 gap-3 max-w-sm w-full">
+                                            <div className="col-span-2 rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/images/ptt-automation/ptt_gui.png"
+                                                    alt="PTT Otomasyon GUI"
+                                                    width={1170}
+                                                    height={830}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg">
+                                                <Image
+                                                    src="/images/ptt-automation/ptt_excel_output.png"
+                                                    alt="PTT Excel Output"
+                                                    width={1170}
+                                                    height={795}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                            <div className="rounded-2xl bg-slate-950/80 border border-white/10 p-1.5 shadow-lg translate-y-3">
+                                                <Image
+                                                    src="/images/ptt-automation/ptt_logo.png"
+                                                    alt="PTT Logo"
+                                                    width={1158}
+                                                    height={605}
+                                                    className="w-full h-auto rounded-xl"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
+                                        <div className="mb-2">
+                                            <span className="text-cyan-600 text-sm font-medium uppercase tracking-wider">{t.pttTag}</span>
+                                        </div>
+                                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                                            {t.pttTitle}
+                                        </h2>
+                                        <p className="text-lg text-cyan-600 font-medium mb-4">
+                                            {t.pttSubtitle}
+                                        </p>
+                                        <div className="mb-4">
+                                            <span className="inline-flex items-center gap-2 rounded-xl border border-cyan-100 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-700 shadow-sm">
+                                                <Image
+                                                    src="/python.png"
+                                                    alt="Python"
+                                                    width={18}
+                                                    height={18}
+                                                    className="rounded-sm"
+                                                />
+                                                {t.pttBuiltWith}
+                                            </span>
+                                        </div>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {t.pttDesc}
+                                        </p>
+
+                                        <div className="mb-8">
+                                            <p className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wider">{t.techStack}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {t.pttFeatures.map((feature, index) => (
+                                                    <TechBadge key={index} label={feature} variant="light" />
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <Link href="/projects/ptt-kargo-takip-otomasyonu">
                                             <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all shadow-lg hover:shadow-xl">
                                                 {t.viewDetails}
                                                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
